@@ -68,6 +68,16 @@ body::after {
   animation: fade-in 720ms ease both;
 }
 
+.engineering-log-grid {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(148, 163, 184, 0.06) 0,
+    rgba(148, 163, 184, 0.06) 1px,
+    transparent 1px,
+    transparent 28px
+  );
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;

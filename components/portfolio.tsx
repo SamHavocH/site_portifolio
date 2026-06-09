@@ -7,6 +7,7 @@ import {
   CheckCircle2,
   Cloud,
   Code2,
+  Cpu,
   Database,
   Download,
   ExternalLink,
@@ -19,6 +20,7 @@ import {
   Terminal,
 } from "lucide-react";
 import Image from "next/image";
+import { engineeringDepthCases } from "@/data/engineeringDepth";
 import {
   type Locale,
   githubHighlights,
@@ -95,6 +97,13 @@ const content = {
       copy:
         "The repositories show end-to-end thinking across lakehouse architecture, API ingestion, orchestration, streaming data quality, Linux productivity and automation. They are organized to make technical review fast.",
       cta: "View repo",
+    },
+    engineeringDepth: {
+      eyebrow: "Engineering Depth",
+      title: "Systems fundamentals under pressure.",
+      copy:
+        "A technical case that connects Linux internals, debugging, infrastructure fundamentals and English technical communication beyond traditional data engineering projects.",
+      logLabel: "boot log",
     },
     skills: {
       eyebrow: "Core Stack",
@@ -174,6 +183,13 @@ const content = {
       copy:
         "Os repositórios mostram pensamento ponta a ponta em arquitetura lakehouse, ingestão de APIs, orquestração, qualidade em streaming, produtividade Linux e automação. A estrutura facilita uma revisão técnica rápida.",
       cta: "Ver repo",
+    },
+    engineeringDepth: {
+      eyebrow: "Engineering Depth",
+      title: "Fundamentos de sistemas sob pressão.",
+      copy:
+        "Um case técnico que conecta Linux internals, debugging, fundamentos de infraestrutura e comunicação técnica em inglês além dos projetos tradicionais de engenharia de dados.",
+      logLabel: "boot log",
     },
     skills: {
       eyebrow: "Stack principal",
@@ -696,6 +712,105 @@ export default function Portfolio({ initialLocale }: { initialLocale: Locale }) 
           ))}
         </div>
       </section>
+
+      <ScrollRevealSection className="section py-16" id="engineering-depth">
+        <SectionHeading
+          eyebrow={t.engineeringDepth.eyebrow}
+          title={t.engineeringDepth.title}
+          copy={t.engineeringDepth.copy}
+        />
+        <div className="grid gap-5">
+          {engineeringDepthCases.map((caseStudy) => (
+            <article
+              key={caseStudy.name}
+              className="glass group relative overflow-hidden rounded-lg border-cyan-200/20 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/50 hover:shadow-glow md:p-8"
+            >
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-br from-cyan-300/10 via-transparent to-emerald-300/10 opacity-80"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200/70 to-transparent"
+              />
+              <div className="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+                <div>
+                  <div className="mb-5 inline-flex items-center gap-2 rounded-md border border-emerald-200/20 bg-emerald-200/[0.08] px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-100">
+                    <Cpu className="size-4" />
+                    Linux internals
+                  </div>
+                  <h3 className="max-w-3xl text-2xl font-semibold leading-tight text-white md:text-3xl">
+                    {caseStudy.name}
+                  </h3>
+                  <p className="mt-4 max-w-3xl leading-7 text-slate-300">
+                    {caseStudy.description[locale]}
+                  </p>
+                  <ul className="mt-6 grid gap-3 text-sm text-slate-300 md:grid-cols-2">
+                    {caseStudy.highlights.map((highlight) => (
+                      <li key={highlight["en-US"]} className="flex gap-2">
+                        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-200" />
+                        <span>{highlight[locale]}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex min-h-[300px] flex-col overflow-hidden rounded-lg border border-white/10 bg-slate-950/80 shadow-2xl shadow-cyan-950/20">
+                  <div className="flex min-h-10 items-center justify-between border-b border-white/10 bg-white/[0.04] px-4">
+                    <div className="flex gap-2">
+                      <span className="size-2.5 rounded-full bg-red-300/80" />
+                      <span className="size-2.5 rounded-full bg-amber-200/80" />
+                      <span className="size-2.5 rounded-full bg-emerald-300/80" />
+                    </div>
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                      {t.engineeringDepth.logLabel}
+                    </span>
+                  </div>
+                  <div className="relative flex flex-1 flex-col justify-between p-5 font-mono text-sm leading-7 text-cyan-50/90">
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0 opacity-60 engineering-log-grid"
+                    />
+                    <div className="relative space-y-3">
+                      {caseStudy.terminalLines[locale].map((line) => (
+                        <p key={line} className="break-words">
+                          <span className="text-emerald-200">lfs</span>
+                          <span className="text-slate-500">:</span>{" "}
+                          <span>{line}</span>
+                        </p>
+                      ))}
+                    </div>
+                    <div className="relative mt-6 grid grid-cols-3 gap-2 text-xs text-slate-400">
+                      <div className="rounded-md border border-white/10 bg-white/[0.04] p-3">
+                        <p className="text-lg font-semibold text-white">7</p>
+                        <p>days</p>
+                      </div>
+                      <div className="rounded-md border border-white/10 bg-white/[0.04] p-3">
+                        <p className="text-lg font-semibold text-white">EN</p>
+                        <p>live</p>
+                      </div>
+                      <div className="rounded-md border border-white/10 bg-white/[0.04] p-3">
+                        <p className="text-lg font-semibold text-white">LFS</p>
+                        <p>source</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative mt-7 flex flex-wrap gap-2">
+                {caseStudy.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-md border border-cyan-200/15 bg-cyan-200/[0.07] px-3 py-1.5 text-xs text-cyan-50"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </ScrollRevealSection>
 
       <section className="section py-16" id="skills">
         <SectionHeading
