@@ -70,7 +70,7 @@ const content = {
       eyebrow: "About",
       title: "Engineering with business context.",
       copy:
-        "Samuel Fersil builds reliable data systems with Python, Linux, SQL, PySpark, Docker and AWS. His Administration background and MBA in Data Science & Analytics help him translate business questions into pipelines, data models and operational routines that are clear, testable and useful to decision makers.",
+        "Samuel Fersil builds reliable data systems with Python, Linux, SQL, PySpark, Docker and AWS. His Administration background and Data Science & Analytics studies help him translate business questions into pipelines, data models and operational routines that are clear, testable and useful to decision makers.",
       cards: [
         {
           title: "Enterprise-ready",
@@ -112,7 +112,7 @@ const content = {
       title: "Business to data engineering.",
       items: [
         "Started with Administration, building a foundation in process, operations and business context",
-        "Completed an MBA in Data Science & Analytics at USP/ESALQ",
+        "Developed Data Science & Analytics knowledge through MBA-level studies at USP/ESALQ",
         "Gained exposure to corporate-scale environments, including Itau Unibanco",
         "Focused the portfolio on Python, AWS, Linux, PySpark and production-minded data workflows",
         "Now targeting remote international Data Engineer roles where reliability and ownership matter",
@@ -149,7 +149,7 @@ const content = {
       eyebrow: "Sobre",
       title: "Engenharia com contexto de negócio.",
       copy:
-        "Samuel Fersil constrói sistemas de dados confiáveis com Python, Linux, SQL, PySpark, Docker e AWS. Sua formação em Administração e MBA em Data Science & Analytics ajudam a transformar perguntas de negócio em pipelines, modelos de dados e rotinas operacionais claras, testáveis e úteis para tomada de decisão.",
+        "Samuel Fersil constrói sistemas de dados confiáveis com Python, Linux, SQL, PySpark, Docker e AWS. Sua formação em Administração e seus estudos em Data Science & Analytics ajudam a transformar perguntas de negócio em pipelines, modelos de dados e rotinas operacionais claras, testáveis e úteis para tomada de decisão.",
       cards: [
         {
           title: "Pronto para enterprise",
@@ -191,7 +191,7 @@ const content = {
       title: "Do negócio à engenharia.",
       items: [
         "Começou pela Administração, construindo base em processos, operações e contexto de negócio",
-        "Concluiu MBA em Data Science & Analytics pela USP/ESALQ",
+        "Desenvolveu conhecimento em Data Science & Analytics por meio de estudos em nível MBA pela USP/ESALQ",
         "Ganhou vivência em ambientes de escala corporativa, incluindo Itau Unibanco",
         "Direcionou o portfólio para Python, AWS, Linux, PySpark e workflows de dados orientados a produção",
         "Agora busca vagas remotas internacionais de Data Engineer onde confiabilidade e ownership importam",
