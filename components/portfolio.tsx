@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -29,7 +29,7 @@ import {
 const githubUrl = "https://github.com/SamHavocH";
 const linkedinUrl =
   "https://www.linkedin.com/in/samuel-ferreira-da-silva-neto-data-engineer";
-const email = "mailto:samuel@example.com";
+const email = "mailto:samfersill@gmail.com";
 const localeStorageKey = "samuel-fersil-locale";
 
 const badges = [
@@ -56,19 +56,19 @@ const content = {
       language: "Language",
     },
     hero: {
-      eyebrow: "Data Engineer for remote-first data teams",
+      eyebrow: "Remote Data Engineer",
       title:
-        "I build production-ready data pipelines for analytics, automation and cloud platforms.",
+        "Reliable data pipelines. Clear business impact.",
       copy:
         "Python, SQL, PySpark and AWS engineer with corporate-scale experience, business fluency and a portfolio built around the workflows hiring teams actually need: ingestion, orchestration, data quality and reproducible delivery.",
-      viewProjects: "Review projects",
-      contact: "Contact me",
+      viewProjects: "Projects",
+      contact: "Contact",
       profile: "GitHub profile",
       location: "Brazil, UTC -03:00",
     },
     about: {
       eyebrow: "About",
-      title: "A data engineer who understands both execution and business context.",
+      title: "Engineering with business context.",
       copy:
         "Samuel Fersil builds reliable data systems with Python, Linux, SQL, PySpark, Docker and AWS. His Administration background and MBA in Data Science & Analytics help him translate business questions into pipelines, data models and operational routines that are clear, testable and useful to decision makers.",
       cards: [
@@ -90,28 +90,26 @@ const content = {
       ],
     },
     projects: {
-      eyebrow: "Portfolio Evidence",
-      title: "Projects designed to answer the questions recruiters and tech leads ask.",
+      eyebrow: "Portfolio",
+      title: "Proof through projects.",
       copy:
         "The repositories show end-to-end thinking across lakehouse architecture, API ingestion, orchestration, streaming data quality, Linux productivity and automation. They are organized to make technical review fast.",
-      cta: "Inspect repository",
+      cta: "View repo",
     },
     skills: {
       eyebrow: "Core Stack",
-      title:
-        "Practical tools for shipping reliable data workflows.",
+      title: "Tools for reliable delivery.",
     },
     github: {
       eyebrow: "GitHub Highlights",
-      title:
-        "A public portfolio for reviewing real implementation choices.",
+      title: "Implementation, in public.",
       copy:
         "The profile currently shows 20 public repositories, 12 stars and a focused portfolio around PySpark, Airflow, dbt, Docker, PostgreSQL, Kafka and Linux. It is structured as a technical signal for recruiters, hiring managers and engineering reviewers.",
       cta: "View GitHub profile",
     },
     journey: {
       eyebrow: "Career Narrative",
-      title: "A business foundation sharpened into data engineering execution.",
+      title: "Business to data engineering.",
       items: [
         "Started with Administration, building a foundation in process, operations and business context",
         "Completed an MBA in Data Science & Analytics at USP/ESALQ",
@@ -121,7 +119,7 @@ const content = {
       ],
     },
     contact: {
-      title: "Hiring for a Data Engineer who can ship and communicate clearly?",
+      title: "Need a Data Engineer?",
       copy:
         "I am open to remote international opportunities involving data pipelines, cloud platforms, automation, ETL/ELT, analytics engineering and data quality.",
       email: "Email",
@@ -137,19 +135,19 @@ const content = {
       language: "Idioma",
     },
     hero: {
-      eyebrow: "Data Engineer para times remotos e data-driven",
+      eyebrow: "Remote Data Engineer",
       title:
-        "Construo pipelines de dados prontos para produção, analytics, automação e plataformas cloud.",
+        "Pipelines confiáveis. Impacto claro.",
       copy:
         "Engenheiro com Python, SQL, PySpark e AWS, experiência em escala corporativa, visão de negócio e um portfólio focado no que empresas internacionais procuram: ingestão, orquestração, qualidade de dados e entrega reproduzível.",
-      viewProjects: "Avaliar projetos",
-      contact: "Falar comigo",
+      viewProjects: "Projetos",
+      contact: "Contato",
       profile: "Perfil no GitHub",
       location: "Brasil, UTC -03:00",
     },
     about: {
       eyebrow: "Sobre",
-      title: "Um Data Engineer que combina execução técnica e visão de negócio.",
+      title: "Engenharia com contexto de negócio.",
       copy:
         "Samuel Fersil constrói sistemas de dados confiáveis com Python, Linux, SQL, PySpark, Docker e AWS. Sua formação em Administração e MBA em Data Science & Analytics ajudam a transformar perguntas de negócio em pipelines, modelos de dados e rotinas operacionais claras, testáveis e úteis para tomada de decisão.",
       cards: [
@@ -171,29 +169,26 @@ const content = {
       ],
     },
     projects: {
-      eyebrow: "Evidência técnica",
-      title:
-        "Projetos pensados para responder às perguntas de recrutadores e tech leads.",
+      eyebrow: "Portfólio",
+      title: "Prova em projetos.",
       copy:
         "Os repositórios mostram pensamento ponta a ponta em arquitetura lakehouse, ingestão de APIs, orquestração, qualidade em streaming, produtividade Linux e automação. A estrutura facilita uma revisão técnica rápida.",
-      cta: "Inspecionar repositório",
+      cta: "Ver repo",
     },
     skills: {
       eyebrow: "Stack principal",
-      title:
-        "Ferramentas práticas para entregar workflows de dados confiáveis.",
+      title: "Ferramentas para entregar bem.",
     },
     github: {
       eyebrow: "GitHub Highlights",
-      title:
-        "Um portfólio público para revisar decisões reais de implementação.",
+      title: "Implementação em público.",
       copy:
         "O perfil mostra atualmente 20 repositórios públicos, 12 stars e um portfólio focado em PySpark, Airflow, dbt, Docker, PostgreSQL, Kafka e Linux. Ele foi organizado como sinal técnico para recrutadores, hiring managers e revisores de engenharia.",
       cta: "Ver perfil no GitHub",
     },
     journey: {
       eyebrow: "Narrativa profissional",
-      title: "Uma base de negócio refinada em execução de engenharia de dados.",
+      title: "Do negócio à engenharia.",
       items: [
         "Começou pela Administração, construindo base em processos, operações e contexto de negócio",
         "Concluiu MBA em Data Science & Analytics pela USP/ESALQ",
@@ -203,7 +198,7 @@ const content = {
       ],
     },
     contact: {
-      title: "Procurando um Data Engineer que entrega e comunica com clareza?",
+      title: "Precisa de um Data Engineer?",
       copy:
         "Aberto a oportunidades remotas internacionais envolvendo pipelines de dados, plataformas cloud, automação, ETL/ELT, analytics engineering e qualidade de dados.",
       email: "Email",
@@ -322,6 +317,199 @@ function SkillIcon({ icon }: { icon: "data" | "cloud" | "analytics" | "tools" })
   return <ServerCog className="size-5" />;
 }
 
+function ScrollRevealSection({
+  children,
+  className,
+  id,
+}: {
+  children: React.ReactNode;
+  className: string;
+  id: string;
+}) {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [progress, setProgress] = useState(0);
+  const maxProgressRef = useRef(0);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (prefersReducedMotion) {
+      setProgress(1);
+      return;
+    }
+
+    let frame = 0;
+
+    function updateProgress() {
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+
+      frame = window.requestAnimationFrame(() => {
+        const section = sectionRef.current;
+        if (!section) {
+          return;
+        }
+
+        const rect = section.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const start = viewportHeight * 0.92;
+        const end = viewportHeight * 0.42;
+        const nextProgress = Math.min(
+          1,
+          Math.max(0, (start - rect.top) / (start - end)),
+        );
+
+        maxProgressRef.current = Math.max(maxProgressRef.current, nextProgress);
+        setProgress(maxProgressRef.current);
+      });
+    }
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+
+    return () => {
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+
+      window.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
+    };
+  }, []);
+
+  const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+  return (
+    <section
+      ref={sectionRef}
+      id={id}
+      className={className}
+      style={{
+        opacity: easedProgress,
+        transform: `translateY(${(1 - easedProgress) * 30}px)`,
+        filter: `blur(${(1 - easedProgress) * 8}px)`,
+      }}
+    >
+      {children}
+    </section>
+  );
+}
+
+function MotionBlurVeil() {
+  const veilRef = useRef<HTMLDivElement | null>(null);
+  const frameRef = useRef<number | null>(null);
+  const lastScrollYRef = useRef(0);
+  const currentOpacityRef = useRef(0);
+  const targetOpacityRef = useRef(0);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    lastScrollYRef.current = window.scrollY;
+
+    function renderFrame() {
+      const veil = veilRef.current;
+      if (!veil) {
+        return;
+      }
+
+      const nextOpacity =
+        currentOpacityRef.current +
+        (targetOpacityRef.current - currentOpacityRef.current) * 0.22;
+
+      currentOpacityRef.current = nextOpacity;
+      targetOpacityRef.current *= 0.965;
+      veil.style.opacity = nextOpacity.toFixed(3);
+
+      if (nextOpacity > 0.004 || targetOpacityRef.current > 0.004) {
+        frameRef.current = window.requestAnimationFrame(renderFrame);
+      } else {
+        currentOpacityRef.current = 0;
+        targetOpacityRef.current = 0;
+        veil.style.opacity = "0";
+        frameRef.current = null;
+      }
+    }
+
+    function startRenderLoop() {
+      if (!frameRef.current) {
+        frameRef.current = window.requestAnimationFrame(renderFrame);
+      }
+    }
+
+    function handleScroll() {
+      const nextScrollY = window.scrollY;
+      const distance = Math.abs(nextScrollY - lastScrollYRef.current);
+      lastScrollYRef.current = nextScrollY;
+
+      targetOpacityRef.current = Math.min(
+        1,
+        Math.max(targetOpacityRef.current, 0.42 + distance / 42),
+      );
+
+      startRenderLoop();
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+
+      if (frameRef.current) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
+    };
+  }, []);
+
+  const farMask =
+    "linear-gradient(to top, rgba(0,0,0,0.68), rgba(0,0,0,0.34) 38%, rgba(0,0,0,0.1) 72%, transparent 100%)";
+  const midMask =
+    "linear-gradient(to top, rgba(0,0,0,0.86), rgba(0,0,0,0.52) 48%, rgba(0,0,0,0.14) 82%, transparent 100%)";
+  const nearMask =
+    "linear-gradient(to top, black, rgba(0,0,0,0.9) 42%, rgba(0,0,0,0.36) 76%, transparent 100%)";
+
+  return (
+    <div
+      ref={veilRef}
+      aria-hidden="true"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-50 h-[56vh] overflow-hidden opacity-0 will-change-opacity md:h-[62vh]"
+    >
+      <div
+        className="absolute inset-x-0 bottom-0 h-full bg-slate-950/[0.09] backdrop-blur-[3px]"
+        style={{
+          maskImage: farMask,
+          WebkitMaskImage: farMask,
+        }}
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 h-[76%] bg-slate-950/[0.16] backdrop-blur-lg"
+        style={{
+          maskImage: midMask,
+          WebkitMaskImage: midMask,
+        }}
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 h-[48%] bg-slate-950/[0.28] backdrop-blur-3xl"
+        style={{
+          maskImage: nearMask,
+          WebkitMaskImage: nearMask,
+        }}
+      />
+      <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-slate-950/48 via-slate-950/16 to-transparent" />
+    </div>
+  );
+}
+
 export default function Portfolio({ initialLocale }: { initialLocale: Locale }) {
   const [locale, setLocale] = useState<Locale>(initialLocale);
   const t = content[locale];
@@ -341,19 +529,9 @@ export default function Portfolio({ initialLocale }: { initialLocale: Locale }) 
 
   return (
     <main className="overflow-hidden">
-      <header className="section flex min-h-[88vh] flex-col justify-between pb-10 pt-6">
-        <nav className="flex items-center justify-between gap-4">
-          <a href="#" className="flex items-center gap-3">
-            <span className="flex size-10 items-center justify-center rounded-md border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-100">
-              SF
-            </span>
-            <span>
-              <span className="block text-sm font-semibold text-white">
-                Samuel Fersil
-              </span>
-              <span className="block text-xs text-slate-400">SamHavocH</span>
-            </span>
-          </a>
+      <MotionBlurVeil />
+      <header className="section pb-10 pt-6">
+        <nav className="flex items-center justify-end gap-4">
           <div className="flex items-center gap-3">
             <div className="hidden items-center gap-5 text-sm text-slate-300 md:flex">
               <a className="hover:text-white" href="#projects">
@@ -374,7 +552,7 @@ export default function Portfolio({ initialLocale }: { initialLocale: Locale }) 
           </div>
         </nav>
 
-        <section className="grid items-center gap-10 py-14 md:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        <section className="grid items-center gap-10 py-12 md:grid-cols-[1.05fr_0.95fr] md:py-16 lg:gap-16">
           <div className="fade-in">
             <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-cyan-300/20 bg-cyan-300/10 px-3 py-2 text-sm text-cyan-100">
               <Sparkles className="size-4" />
@@ -450,7 +628,7 @@ export default function Portfolio({ initialLocale }: { initialLocale: Locale }) 
         </section>
       </header>
 
-      <section className="section py-16" id="about">
+      <ScrollRevealSection className="section py-16" id="about">
         <SectionHeading
           eyebrow={t.about.eyebrow}
           title={t.about.title}
@@ -465,7 +643,7 @@ export default function Portfolio({ initialLocale }: { initialLocale: Locale }) 
             </article>
           ))}
         </div>
-      </section>
+      </ScrollRevealSection>
 
       <section className="section py-16" id="projects">
         <SectionHeading
